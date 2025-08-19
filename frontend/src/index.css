@@ -1,0 +1,47 @@
+/* Theme support */
+body.dark-theme {
+  background: #181a1b !important;
+  color: #e0e0e0 !important;
+}
+body.light-theme {
+  background: #f8f9fa !important;
+  color: #222 !important;
+}
+
+body, .dashboard-container, .settings-container, .repo-table, .review-table, .card, .table {
+  font-weight: 400;
+  color: #d3d3d3;
+}
+
+.dashboard-container h2, .dashboard-container .lead, .settings-container h2, .settings-container .lead {
+  color: #b0b0b0;
+}
+
+.table th, .table td {
+  color: #c0c0c0;
+}
+
+body.light-theme .dashboard-container, body.light-theme .settings-container, body.light-theme .card, body.light-theme .table {
+  color: #333;
+}
+
+body.light-theme .dashboard-container h2, body.light-theme .dashboard-container .lead, body.light-theme .settings-container h2, body.light-theme .settings-container .lead {
+  color: #444;
+}
+
+body.light-theme .table th, body.light-theme .table td {
+  color: #444;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

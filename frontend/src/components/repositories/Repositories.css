@@ -1,0 +1,408 @@
+/* Repositories Container */
+.repositories-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+/* Header Styling */
+.text-gradient {
+  background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-shadow: 0 0 8px rgba(0, 255, 135, 0.15);
+  margin-bottom: 10px;
+}
+
+/* Repository Cards */
+.repo-card {
+  background: rgba(25, 30, 35, 0.85);
+  border: 1px solid rgba(0, 255, 135, 0.12);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 255, 135, 0.03);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.repo-card:hover {
+  border-color: rgba(0, 255, 135, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 255, 135, 0.06);
+}
+
+/* Buttons */
+.add-repo-btn {
+  background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+  border: none;
+  border-radius: 8px;
+  color: #0a0a0a;
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.add-repo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 135, 0.3);
+  color: #0a0a0a;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+  border: none;
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #60efff 0%, #00ff87 100%);
+  color: #0a0a0a;
+}
+
+/* Table Styling */
+.repo-table {
+  margin-bottom: 0;
+  color: #ffffff;
+  background: transparent;
+}
+
+.repo-table th {
+  border-top: none;
+  border-bottom: 2px solid rgba(0, 255, 135, 0.2);
+  font-weight: 600;
+  color: #ffffff !important;
+  padding: 15px;
+  background: rgba(30, 35, 40, 0.6);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Force all table content to be white */
+.repo-table th,
+.repo-table td,
+.repo-table th *,
+.repo-table td * {
+  color: #ffffff !important;
+}
+
+/* Specific styling for numeric cells */
+.repo-table td:nth-child(3),
+.repo-table td:nth-child(4),
+.repo-table td:nth-child(5) {
+  color: #ffffff !important;
+  font-weight: 500;
+  text-align: center;
+}
+
+.repo-table td {
+  border-top: 1px solid rgba(0, 255, 135, 0.1);
+  padding: 15px;
+  vertical-align: middle;
+  background: rgba(25, 30, 35, 0.4);
+  color: #ffffff !important;
+}
+
+.repo-table tbody tr:hover {
+  background: rgba(30, 35, 40, 0.6);
+}
+
+.repo-table tbody tr:hover td {
+  color: #ffffff !important;
+}
+
+/* Repository Name Styling */
+.repo-name {
+  display: flex;
+  align-items: center;
+}
+
+.repo-name svg {
+  color: #00ff87;
+  font-size: 1.2rem;
+}
+
+.repo-name > div > div {
+  font-weight: 600;
+  color: #00ff87 !important; /* Repository name in green */
+  font-size: 1.1rem;
+}
+
+.repo-name small {
+  color: rgba(255, 255, 255, 0.6) !important; /* URL in muted white */
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  font-weight: 400;
+}
+
+/* Table Text Colors */
+.repo-table td {
+  color: #ffffff !important;
+}
+
+.repo-table td * {
+  color: inherit !important;
+}
+
+/* Ensure all text in table is visible */
+.repo-table tbody td,
+.repo-table tbody td span,
+.repo-table tbody td div {
+  color: #ffffff !important;
+}
+
+/* Badge Styling */
+.badge {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.bg-success {
+  background: linear-gradient(135deg, #00ff87 0%, #60efff 100%) !important;
+  color: #0a0a0a !important;
+}
+
+.bg-danger {
+  background: #ff4757 !important;
+  color: #ffffff !important;
+}
+
+/* Override Bootstrap text colors for table */
+.repo-table .text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.repo-table .text-dark,
+.repo-table .text-secondary {
+  color: #ffffff !important;
+}
+
+/* Action Buttons */
+.repo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  border: 1px solid rgba(0, 255, 135, 0.3);
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: rgba(30, 35, 40, 0.6);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.action-btn:hover {
+  border-color: #00ff87;
+  color: #00ff87;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 255, 135, 0.2);
+}
+
+/* Modal Styling */
+.repo-modal .modal-content {
+  background: rgba(25, 30, 35, 0.95);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.repo-modal .modal-header {
+  background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 15px 15px 0 0;
+}
+
+.repo-modal .modal-header .btn-close {
+  filter: invert(1);
+}
+
+.repo-modal .modal-body {
+  color: #ffffff;
+}
+
+.repo-modal .form-label {
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.repo-input {
+  background: rgba(30, 35, 40, 0.8);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.repo-input:focus {
+  background: rgba(30, 35, 40, 0.9);
+  border-color: rgba(0, 255, 135, 0.4);
+  box-shadow: 0 0 8px rgba(0, 255, 135, 0.1);
+  color: #ffffff;
+}
+
+.repo-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.connect-btn {
+  background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+  border: none;
+  border-radius: 8px;
+  color: #0a0a0a;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.connect-btn:hover {
+  background: linear-gradient(135deg, #60efff 0%, #00ff87 100%);
+  color: #0a0a0a;
+}
+
+.connect-btn:disabled {
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Alert Styling */
+.alert-warning {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: #fff3cd;
+  border-radius: 8px;
+}
+
+/* Loading States */
+.text-center .spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: #00ff87;
+}
+
+.text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Empty State */
+.text-center p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Form Text */
+.form-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .repositories-container {
+    padding: 10px 0;
+  }
+  
+  .text-gradient {
+    font-size: 2rem;
+  }
+  
+  .repo-table {
+    font-size: 0.9rem;
+  }
+  
+  .repo-name {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .repo-actions {
+    flex-direction: column;
+  }
+  
+  .repo-card .card-body {
+    padding: 15px;
+  }
+}
+
+/* Animation for table rows */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.repo-table tbody tr {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Scrollbar Styling */
+.repo-table::-webkit-scrollbar {
+  width: 8px;
+}
+
+.repo-table::-webkit-scrollbar-track {
+  background: rgba(25, 30, 35, 0.5);
+  border-radius: 4px;
+}
+
+.repo-table::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 135, 0.3);
+  border-radius: 4px;
+}
+
+.repo-table::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 135, 0.5);
+}
+
+/* Global text visibility fix for repositories table */
+.repositories-container .repo-table,
+.repositories-container .repo-table *,
+.repositories-container .table,
+.repositories-container .table * {
+  color: #ffffff !important;
+}
+
+/* Exception for badges to keep their specific colors */
+.repositories-container .badge {
+  color: inherit !important;
+}
+
+.repositories-container .bg-success {
+  color: #0a0a0a !important;
+}
+
+.repositories-container .bg-danger {
+  color: #ffffff !important;
+}
+
+/* Ensure action buttons are visible */
+.repositories-container .action-btn {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.repositories-container .action-btn:hover {
+  color: #00ff87 !important;
+}

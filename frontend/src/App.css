@@ -1,0 +1,9 @@
+.App {
+  min-height: 100vh;
+  background-color: #0d1117;
+  color: white;
+}
+
+main {
+  padding-top: 60px;
+}

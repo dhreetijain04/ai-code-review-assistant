@@ -1,0 +1,417 @@
+.pull-requests-container {
+  padding: 2rem;
+  min-height: calc(100vh - 60px);
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #00ff87, #60efff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.filter-card {
+  background: rgba(240, 240, 240, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.filter-card:hover {
+  border-color: #00ff87;
+  box-shadow: 0 0 20px rgba(0, 255, 135, 0.3);
+}
+
+.search-input,
+.filter-select {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus,
+.filter-select:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #00ff87;
+  box-shadow: 0 0 10px rgba(0, 255, 135, 0.3);
+  color: #1a1a1a;
+}
+
+.search-icon {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  border-right: none;
+  color: #666666;
+}
+
+.filter-btn {
+  background: rgba(0, 255, 135, 0.1);
+  border: 1px solid rgba(0, 255, 135, 0.3);
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(0, 255, 135, 0.2);
+  border-color: #00ff87;
+  color: #000000;
+}
+
+.pr-card {
+  background: rgba(240, 240, 240, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: #1a1a1a;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pr-card:hover {
+  border-color: #00ff87;
+  box-shadow: 0 0 20px rgba(0, 255, 135, 0.3);
+  transform: translateY(-2px);
+}
+
+.pr-title h5 {
+  color: #1a1a1a !important;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.pr-meta {
+  display: flex;
+  gap: 1rem;
+  color: #333333;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.pr-meta span {
+  display: flex;
+  align-items: center;
+  color: #333333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.repo-name,
+.branch-name {
+  color: #00aa5e !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.pr-stats {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 135, 0.1);
+}
+
+.stat-item small {
+  color: #555555 !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) !important;
+  text-transform: uppercase !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+.stat-item span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.pr-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.status-badge,
+.severity-badge {
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.review-btn {
+  background: linear-gradient(45deg, #00ff87, #60efff);
+  border: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 255, 135, 0.4);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+.form-select {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  border-color: #00ff87;
+  box-shadow: 0 0 10px rgba(0, 255, 135, 0.3);
+}
+
+.form-select option {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+/* Enhanced Modal Styling for Better Text Visibility */
+.pr-modal .modal-content {
+  background: rgba(13, 17, 23, 0.95) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(0, 255, 135, 0.3) !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 12px !important;
+}
+
+.pr-modal .modal-header {
+  border-bottom: 1px solid rgba(0, 255, 135, 0.2) !important;
+  background: rgba(0, 255, 135, 0.05) !important;
+}
+
+.pr-modal .modal-title {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 135, 0.3) !important;
+  font-weight: 600 !important;
+}
+
+.pr-modal .modal-body {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+.pr-modal .modal-body h5 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.pr-modal .modal-body h6 {
+  color: #00ff87 !important;
+  text-shadow: 0 0 4px rgba(0, 255, 135, 0.4) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+  margin-top: 1.5rem !important;
+}
+
+.pr-modal .modal-body .pr-meta {
+  color: #cccccc !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  margin-bottom: 1rem !important;
+}
+
+.pr-modal .modal-body .pr-meta span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  font-weight: 500 !important;
+}
+
+.pr-modal .modal-body .repo-name {
+  color: #00ff87 !important;
+  text-shadow: 0 0 4px rgba(0, 255, 135, 0.4) !important;
+}
+
+.pr-modal .modal-body .branch-name {
+  color: #60efff !important;
+  text-shadow: 0 0 4px rgba(96, 239, 255, 0.4) !important;
+}
+
+.pr-modal .review-summary {
+  background: rgba(255, 255, 255, 0.03) !important;
+  padding: 1.25rem !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(0, 255, 135, 0.1) !important;
+}
+
+.pr-modal .review-summary .stat-item small {
+  color: #cccccc !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.pr-modal .review-summary .stat-item span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
+
+.pr-modal .code-changes {
+  background: rgba(255, 255, 255, 0.03) !important;
+  padding: 1.25rem !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(0, 255, 135, 0.1) !important;
+}
+
+.pr-modal .code-changes .d-flex span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1rem !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.pr-modal .recommendations {
+  background: rgba(255, 255, 255, 0.03) !important;
+  padding: 1.25rem !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(0, 255, 135, 0.1) !important;
+}
+
+.pr-modal .recommendations ul {
+  margin-bottom: 0 !important;
+  padding-left: 1.5rem !important;
+}
+
+.pr-modal .recommendations li {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+.pr-modal .modal-footer {
+  border-top: 1px solid rgba(0, 255, 135, 0.2) !important;
+  background: rgba(0, 255, 135, 0.05) !important;
+}
+
+.pr-modal .modal-footer .btn {
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.pr-modal .modal-footer .btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.pr-modal .modal-footer .btn-secondary {
+  background: rgba(108, 117, 125, 0.8) !important;
+  border-color: rgba(108, 117, 125, 0.6) !important;
+}
+
+.pr-modal .modal-footer .btn-success {
+  background: rgba(40, 167, 69, 0.9) !important;
+  border-color: rgba(40, 167, 69, 0.7) !important;
+}
+
+.pr-modal .modal-footer .btn-warning {
+  background: rgba(255, 193, 7, 0.9) !important;
+  border-color: rgba(255, 193, 7, 0.7) !important;
+  color: #000000 !important;
+}
+
+/* Enhanced Badge Styling in Modal */
+.pr-modal .badge {
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Close Button Styling */
+.pr-modal .btn-close {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 50% !important;
+  opacity: 0.8 !important;
+  transition: all 0.3s ease !important;
+}
+
+.pr-modal .btn-close:hover {
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+}
+
+/* Enhanced "No Results" Message Styling */
+.pull-requests-container .text-center.text-muted {
+  color: #1a1a1a !important;
+  background: rgba(240, 240, 240, 0.8) !important;
+  padding: 3rem 2rem !important;
+  border-radius: 15px !important;
+  border: 2px dashed rgba(0, 255, 135, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.pull-requests-container .text-center.text-muted h5 {
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+  margin-bottom: 1rem !important;
+}
+
+.pull-requests-container .text-center.text-muted p {
+  color: #333333 !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.pull-requests-container .text-center.text-muted .opacity-50 {
+  opacity: 0.6 !important;
+  color: #00ff87 !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 255, 135, 0.3)) !important;
+}
