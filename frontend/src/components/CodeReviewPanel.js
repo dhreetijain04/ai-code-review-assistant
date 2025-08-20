@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, Button, Badge, Modal } from 'react-bootstrap';
 import './CodeReviewPanel.css';
-import './CodeReviewProcess.css';
 
 const CodeReviewPanel = ({ githubToken }) => {
   const [language, setLanguage] = useState('javascript');
