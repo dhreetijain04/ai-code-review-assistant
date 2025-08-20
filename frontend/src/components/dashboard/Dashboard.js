@@ -29,6 +29,13 @@ ChartJS.register(
 );
 
 const Dashboard = ({ githubToken }) => {
+  console.log('🔍 Dashboard component loaded');
+  console.log('🔧 Environment variables:', {
+    REACT_APP_API_URL: process.env.REACT_APP_API_URL,
+    NODE_ENV: process.env.NODE_ENV
+  });
+  console.log('🔑 GitHub token:', githubToken ? 'Present' : 'Missing');
+  
   const [dashboardData, setDashboardData] = useState({
     overview: {
       activePullRequests: 0,
@@ -78,6 +85,8 @@ const Dashboard = ({ githubToken }) => {
 
       // Get review data from our database
       const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3002';
+      console.log('API URL being used:', apiUrl);
+      console.log('Environment variable:', process.env.REACT_APP_API_URL);
       const reviewsResponse = await fetch(`${apiUrl}/api/reviews`, { 
         headers: backendHeaders 
       });
@@ -218,7 +227,12 @@ const Dashboard = ({ githubToken }) => {
       
     } catch (err) {
       console.error('Error fetching real dashboard data:', err);
-      setError(err.message);
+      console.error('Error details:', {
+        message: err.message,
+        stack: err.stack,
+        name: err.name
+      });
+      setError(`Failed to fetch dashboard data: ${err.message}`);
       
       // Set empty data structure instead of fake data
       setDashboardData({
