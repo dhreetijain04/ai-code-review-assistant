@@ -28,15 +28,19 @@ const LoginForm = ({ onLogin }) => {
       });
 
       if (!response.ok) {
-        throw new Error('Invalid GitHub token');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('GitHub API Error:', response.status, errorData);
+        throw new Error(`GitHub API Error: ${response.status} - ${errorData.message || 'Invalid token'}`);
       }
 
       const userData = await response.json();
+      console.log('Login successful for user:', userData.login);
       
       // Call the parent component's login handler
       onLogin(githubToken, userData);
     } catch (err) {
-      setError('Invalid GitHub token. Please check and try again.');
+      console.error('Login error:', err);
+      setError(`Login failed: ${err.message}`);
     } finally {
       setLoading(false);
     }

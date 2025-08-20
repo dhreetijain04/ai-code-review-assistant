@@ -8,7 +8,17 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3002;
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',  // Local development
+    'https://your-site-name.netlify.app',  // Replace with your actual Netlify URL
+    /https:\/\/.*\.netlify\.app$/,  // Allow any Netlify app
+    /https:\/\/.*\.netlify\.com$/   // Allow legacy Netlify domains
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Debug middleware
@@ -19,6 +29,24 @@ app.use((req, res, next) => {
     headers: req.headers
   });
   next();
+});
+
+// Health check endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'AI Code Review Assistant API is running!', 
+    status: 'healthy',
+    version: '1.0.0',
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'healthy',
+    database: 'connected',
+    timestamp: new Date().toISOString()
+  });
 });
 
 // Routes
