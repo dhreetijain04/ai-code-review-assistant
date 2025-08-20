@@ -77,7 +77,8 @@ const Dashboard = ({ githubToken }) => {
       };
 
       // Get review data from our database
-      const reviewsResponse = await fetch('http://localhost:3002/api/reviews', { 
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3002';
+      const reviewsResponse = await fetch(`${apiUrl}/api/reviews`, { 
         headers: backendHeaders 
       });
       

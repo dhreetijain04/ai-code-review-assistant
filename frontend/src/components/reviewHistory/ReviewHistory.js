@@ -20,7 +20,8 @@ const ReviewHistory = ({ githubToken }) => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('http://localhost:3002/api/reviews', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3002';
+      const response = await fetch(`${apiUrl}/api/reviews`, {
         headers: {
           'Authorization': `Bearer ${githubToken}`,
         },

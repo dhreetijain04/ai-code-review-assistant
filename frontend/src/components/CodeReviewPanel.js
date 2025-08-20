@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Form, Button, Alert, Badge, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Card, Form, Button, Badge, Modal } from 'react-bootstrap';
 import './CodeReviewPanel.css';
 import './CodeReviewProcess.css';
 
@@ -20,7 +20,8 @@ const CodeReviewPanel = ({ githubToken }) => {
 
   const fetchRepositories = async () => {
     try {
-      const response = await fetch('http://localhost:3002/api/repositories', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3002';
+      const response = await fetch(`${apiUrl}/api/repositories`, {
         headers: {
           'Authorization': `Bearer ${githubToken}`,
         },
@@ -99,7 +100,8 @@ const CodeReviewPanel = ({ githubToken }) => {
         pr_number: prNumber
       };
 
-      const response = await fetch('http://localhost:3002/api/review', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3002';
+      const response = await fetch(`${apiUrl}/api/review`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
